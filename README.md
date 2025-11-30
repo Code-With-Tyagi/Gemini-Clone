@@ -6,4 +6,4 @@ Includes a chat interface, sidebar history, responsive design, and API-based mes
 🔗 Live Demo
 
 👉 **Visit the Live App:**  
-[🚀 Gemini Clone](https://gemini-clone-mocha-kappa.vercel.app/)
+[🚀 Gemini Clone](https://gemini-clone-gamma-peach.vercel.app/)
