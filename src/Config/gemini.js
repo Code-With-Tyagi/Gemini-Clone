@@ -1,28 +1,21 @@
-import { GoogleGenAI } from "@google/genai";
+// src/gemini.js
+// SAFE FRONTEND — no API key, no GoogleGenAI SDK
 
-const ai = new GoogleGenAI({
-  apiKey: "AIzaSyApH_ohmsQGnvwa_vk0JU2MkxocvyGrg4k",
-});
-
-async function main(prompt) {
-  const response = await ai.models.generateContent({
-    model: "gemini-2.5-flash",
-    contents: [
-      {
-        role: "user",
-        parts: [{ text: prompt }],
-      },
-    ],
+const main = async (prompt) => {
+  const res = await fetch("/api/chat", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ prompt }),
   });
 
-  // Extract the model output
-  const text = response.text;  // <-- REAL REAL FIX
-
-  console.log(text);
-  return text;
-}
+  const data = await res.json();
+  return data.text;
+};
 
 export default main;
+
 
 
 
